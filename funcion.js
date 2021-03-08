@@ -1,38 +1,40 @@
 function movimiento(cuenta, operacion = "credito") {
-    // valor1 = suma_en_cuenta
+    let action;
+    let valor1;
+  
     if (operacion == "credito") {
-      const oper = "ingresar";
+      action = "ingresar";
     } else {
-      const oper = "debitar";
+      action = "debitar";
     }
-    const monto = prompt(`Monto a ${oper}`);
-
+  
+    const monto = prompt(`Monto a ${operacion}`);
+  
     if (cuenta == "567") {
-      const valor1 = 10000;
+      valor1 = 10000;
     } else {
-      const valor1 = 5000;
+      valor1 = 5000;
     }
-
+  
     if (operacion == "debito") {
-      const resultado = valor1 - Number(monto);
+      return (resultado = valor1 - Number(monto));
     } else {
-      const resultado = valor1 + Number(monto);
+      return (resultado = valor1 + Number(monto));
     }
-    return resultado;
   }
-
+  
   const usuario = prompt("Ingresa tu usuario");
   const contrasenia = prompt("Ingresa tu contraseña");
-
+  
   if (usuario == "admin") {
     if (contrasenia == "123456") {
       alert("Bienvenida admin");
-
+  
       const menu = prompt("Ingresá el valor del menu");
       if (menu == "1") {
         const cuenta = prompt("¿A qué cuenta desea ingresarlo?");
         if (cuenta == "567") {
-          const suma = movimiento(cuenta);
+          const suma = movimiento(cuenta); // ERROR
           alert(`La cuenta ${cuenta} posee ${suma}`);
         } else {
           // Sino ingreso 567 es porque ingresó 789
